@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+/* body{
   background-color:rgb(41, 49, 65);
   margin: auto;
   max-width: 1440px;
   position: relative;
-}
+} */
