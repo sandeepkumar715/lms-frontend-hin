@@ -1,12 +1,10 @@
 import aboutMainPage from "../assets/Images/aboutMainPage.jpg";
-import billgates from "../assets/Images/bill gates.png"
-import einstein from "../assets/Images/einstein.jpg"
-import kalam from "../assets/Images/kalam.png"
-import nelsonmandela from "../assets/Images/nelson mandela.jpeg"
-import stevejob from "../assets/Images/steve job.jpg"
+import CarouselSlide from "../components/CarouselSlide";
+import { celebrities } from "../Constants/CelebrityData";
 import HomeLayout from "../Layouts/HomeLayout";
 
 function AboutUs(){
+   
         return(
             <HomeLayout>
                 <div className="pl-20 pt-20 flex flex-col text-white">
@@ -39,8 +37,25 @@ function AboutUs(){
                             </div>
                 </div>
                    <div className="carousel w-1/2 my-16 m-auto">
+                               {celebrities && celebrities.map(celebrity => (
+                                                    <CarouselSlide
+                                                     {...celebrity} 
+                                                     key={celebrity.slideNumber}
+                                                      totalSlides={celebrities.length}
+                                                      />
+                                                      ))} 
                                 
-                                        <div id="slide1" className="carousel-item relative w-full">
+                                        
+                           
+                    </div>
+                </div>
+            </HomeLayout>
+        )
+
+}
+export default AboutUs;
+
+{/* <div id="slide1" className="carousel-item relative w-full">
                                                 <div className="flex flex-col items-center justify-center gap-4 px-[15%]">
                                                 <img
                                                 alt="Tailwind CSS slide example"
@@ -127,13 +142,5 @@ function AboutUs(){
                                                 <a href="#slide1" className="btn btn-circle">❯</a>
                                                 </div>
                                         </div>
-                                       </div>
+                                       </div> */}
                                 
-                           
-                    </div>
-                </div>
-            </HomeLayout>
-        )
-
-}
-export default AboutUs;
